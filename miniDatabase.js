@@ -8,11 +8,18 @@ const students=[
 // add a new stundent object in array
 students.push({name:"karan", age:25,marks:{math:83, science:94, english:96} })
 
+// for(let i=0;i<students.length;i++){
+//    console.log(students.name)
+//     console.log(Object.values(students.marks))
+    
+// }
+
+
 students.forEach(student=>{
     const {math,science,english}=student.marks
     const avrage=(math + science + english) / 3
     student.avragemarks=avrage
-    // console.log(`${student.name} avrage marks: ${avrage.toFixed(2)}`);
+    console.log(`${student.name} avrage marks: ${avrage.toFixed(2)}`);
     
 })
 
@@ -22,7 +29,7 @@ const topstudent=students.reduce((highest,student)=>{
     return(student.avragemarks > highest.avragemarks ) ? student : highest
 })
 console.log(topstudent.name);
-console.log("Details:",topstudent)
+console.log("Details:",topstudent.avragemarks.toFixed(3))
 
 
 
